@@ -25,13 +25,28 @@ function verhuizing_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_afmetingen'.
-  $field_bases['field_afmetingen'] = array(
+  // Exported field_base: 'field_afmetingen_1'.
+  $field_bases['field_afmetingen_1'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_afmetingen_1',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'physical',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'physical_dimensions',
+  );
+
+  // Exported field_base: 'field_afstand_tot_linkermuur'.
+  $field_bases['field_afstand_tot_linkermuur'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_afmetingen',
+    'field_name' => 'field_afstand_tot_linkermuur',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'dimension',
@@ -65,19 +80,19 @@ function verhuizing_field_default_field_bases() {
           'suffix' => 'mm',
         ),
       ),
-      'mode' => 2,
+      'mode' => 1,
     ),
     'translatable' => 0,
     'type' => 'dimension',
   );
 
-  // Exported field_base: 'field_afmetingen_2'.
-  $field_bases['field_afmetingen_2'] = array(
+  // Exported field_base: 'field_afstand_tot_rechtermuur'.
+  $field_bases['field_afstand_tot_rechtermuur'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_afmetingen_2',
+    'field_name' => 'field_afstand_tot_rechtermuur',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'dimension',
@@ -111,119 +126,10 @@ function verhuizing_field_default_field_bases() {
           'suffix' => 'mm',
         ),
       ),
-      'mode' => 2,
+      'mode' => 1,
     ),
     'translatable' => 0,
     'type' => 'dimension',
-  );
-
-  // Exported field_base: 'field_afmetingen_3'.
-  $field_bases['field_afmetingen_3'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_afmetingen_3',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'dimension',
-    'settings' => array(
-      'fields' => array(
-        'height' => array(
-          'datatype' => 1,
-          'decimals' => 0,
-          'descr' => '',
-          'factor' => 1,
-          'label' => 'Hoogte',
-          'prefix' => '',
-          'suffix' => 'mm',
-        ),
-        'length' => array(
-          'datatype' => 1,
-          'decimals' => 0,
-          'descr' => '',
-          'factor' => 1,
-          'label' => 'Lengte',
-          'prefix' => '',
-          'suffix' => 'mm',
-        ),
-        'width' => array(
-          'datatype' => 1,
-          'decimals' => 0,
-          'descr' => '',
-          'factor' => 1,
-          'label' => 'Breedte',
-          'prefix' => '',
-          'suffix' => 'mm',
-        ),
-      ),
-      'mode' => 2,
-    ),
-    'translatable' => 0,
-    'type' => 'dimension',
-  );
-
-  // Exported field_base: 'field_beschrijvingen_afmetingen'.
-  $field_bases['field_beschrijvingen_afmetingen'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_beschrijvingen_afmetingen',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_beschrijvingen_afmetingen3'.
-  $field_bases['field_beschrijvingen_afmetingen3'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_beschrijvingen_afmetingen3',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_beschrijvingen_afmetingen_'.
-  $field_bases['field_beschrijvingen_afmetingen_'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_beschrijvingen_afmetingen_',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
   );
 
   // Exported field_base: 'field_foto_s'.
@@ -347,6 +253,21 @@ function verhuizing_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_maten_binnenzijde',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'physical',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'physical_dimensions',
+  );
+
+  // Exported field_base: 'field_maten_inclusief_kozijn'.
+  $field_bases['field_maten_inclusief_kozijn'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_maten_inclusief_kozijn',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'physical',
