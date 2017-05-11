@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the verhuizing feature.
+ */
+
+include_once 'verhuizing.features.inc';
