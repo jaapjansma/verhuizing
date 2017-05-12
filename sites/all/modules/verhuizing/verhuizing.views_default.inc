@@ -111,7 +111,7 @@ function verhuizing_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Foto\'s & Opmerkingen';
+  $handler->display->display_options['title'] = 'Bekijk object';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'meer';
   $handler->display->display_options['access']['type'] = 'role';
@@ -219,16 +219,6 @@ function verhuizing_views_default_views() {
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'fotos';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Foto\'s';
-  $handler->display->display_options['menu']['weight'] = '3';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
   /* Display: Pagina */
   $handler = $view->new_display('page', 'Pagina', 'page_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -291,7 +281,7 @@ function verhuizing_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_foto_s']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_foto_s']['separator'] = '';
+  $handler->display->display_options['fields']['field_foto_s']['separator'] = '<br>';
   /* Veld: Inhoud: Aantal treden */
   $handler->display->display_options['fields']['field_aantal_treden']['id'] = 'field_aantal_treden';
   $handler->display->display_options['fields']['field_aantal_treden']['table'] = 'field_data_field_aantal_treden';
@@ -371,7 +361,7 @@ function verhuizing_views_default_views() {
   $handler->display->display_options['path'] = 'fotos/%';
   $translatables['foto_s_opmerkingen'] = array(
     t('Master'),
-    t('Foto\'s & Opmerkingen'),
+    t('Bekijk object'),
     t('meer'),
     t('Toepassen'),
     t('Herstellen'),
@@ -379,7 +369,6 @@ function verhuizing_views_default_views() {
     t('Oplopend'),
     t('Aflopend'),
     t('[title]'),
-    t('Page'),
     t('Pagina'),
     t('Aantal treden'),
     t('Afmetingen'),
@@ -442,17 +431,6 @@ function verhuizing_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Veld: Inhoud: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = 'Terug naar foto\'s';
-  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = 'fotos/[nid]';
-  $handler->display->display_options['fields']['nid']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Veld: Inhoud: Foto's */
   $handler->display->display_options['fields']['field_foto_s']['id'] = 'field_foto_s';
   $handler->display->display_options['fields']['field_foto_s']['table'] = 'field_data_field_foto_s';
@@ -506,6 +484,17 @@ function verhuizing_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'fotos/%/gallerij';
+
+  /* Display: Pagina */
+  $handler = $view->new_display('page', 'Pagina', 'page_1');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['path'] = 'allefotos';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Foto\'s';
+  $handler->display->display_options['menu']['weight'] = '3';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['fotos'] = array(
     t('Master'),
     t('fotos'),
@@ -522,9 +511,9 @@ function verhuizing_views_default_views() {
     t('‹ vorige'),
     t('volgende ›'),
     t('laatste »'),
-    t('Terug naar foto\'s'),
     t('Alle'),
     t('Page'),
+    t('Pagina'),
   );
   $export['fotos'] = $view;
 
@@ -581,6 +570,13 @@ function verhuizing_views_default_views() {
 <li><a href="node/add/trap">Nieuw trap</a></li>
 </ul>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
+  /* Veld: Inhoud: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Veld: Inhoud: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -591,47 +587,30 @@ function verhuizing_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Veld: Algemeen: Aangepaste tekst */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[title]';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'fotos/[nid]';
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Veld: Inhoud: Verdieping */
+  $handler->display->display_options['fields']['field_verdieping']['id'] = 'field_verdieping';
+  $handler->display->display_options['fields']['field_verdieping']['table'] = 'field_data_field_verdieping';
+  $handler->display->display_options['fields']['field_verdieping']['field'] = 'field_verdieping';
+  $handler->display->display_options['fields']['field_verdieping']['type'] = 'taxonomy_term_reference_plain';
   /* Veld: Inhoud: Bewerkingslink */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['edit_node']['alter']['text'] = '[title]';
+  $handler->display->display_options['fields']['edit_node']['alter']['text'] = 'Bewerk object';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['edit_node']['text'] = '[title]';
-  /* Veld: Inhoud: Verdieping */
-  $handler->display->display_options['fields']['field_verdieping']['id'] = 'field_verdieping';
-  $handler->display->display_options['fields']['field_verdieping']['table'] = 'field_data_field_verdieping';
-  $handler->display->display_options['fields']['field_verdieping']['field'] = 'field_verdieping';
-  $handler->display->display_options['fields']['field_verdieping']['type'] = 'taxonomy_term_reference_plain';
-  /* Veld: Inhoud: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Veld: Algemeen: Aangepaste tekst */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Foto\'s';
-  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'fotos/[nid]';
-  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Veld: Algemeen: Aangepaste tekst */
-  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
-  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Fotogallerij';
-  $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'fotos/[nid]/gallerij';
-  $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Bewerk object';
   /* Sorteercriterium: Inhoud: Verdieping (field_verdieping) */
   $handler->display->display_options['sorts']['field_verdieping_tid']['id'] = 'field_verdieping_tid';
   $handler->display->display_options['sorts']['field_verdieping_tid']['table'] = 'field_data_field_verdieping';
@@ -675,8 +654,7 @@ function verhuizing_views_default_views() {
 </ul>'),
     t('[title]'),
     t('Verdieping'),
-    t('Foto\'s'),
-    t('Fotogallerij'),
+    t('Bewerk object'),
     t('Page'),
   );
   $export['objecten'] = $view;
