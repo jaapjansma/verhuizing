@@ -91,6 +91,23 @@ function verhuizing_views_default_views() {
   $handler->display->display_options['fields']['field_opgemeten']['id'] = 'field_opgemeten';
   $handler->display->display_options['fields']['field_opgemeten']['table'] = 'field_data_field_opgemeten';
   $handler->display->display_options['fields']['field_opgemeten']['field'] = 'field_opgemeten';
+  /* Veld: Inhoud: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Veld: Algemeen: Aangepaste tekst */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Foto\'s';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'fotos/[nid]';
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sorteercriterium: Inhoud: Opgemeten (field_opgemeten) */
   $handler->display->display_options['sorts']['field_opgemeten_value']['id'] = 'field_opgemeten_value';
   $handler->display->display_options['sorts']['field_opgemeten_value']['table'] = 'field_data_field_opgemeten';
@@ -139,6 +156,7 @@ function verhuizing_views_default_views() {
     t('[title]'),
     t('Verdieping'),
     t('Opgemeten'),
+    t('Foto\'s'),
     t('Page'),
   );
   $export['objecten'] = $view;
