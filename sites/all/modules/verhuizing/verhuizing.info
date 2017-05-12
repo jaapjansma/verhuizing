@@ -72,6 +72,7 @@ features[user_permission][] = edit own ruimte content
 features[user_permission][] = edit own trap content
 features[views_view][] = alle_objecten
 features[views_view][] = foto_s_opmerkingen
+features[views_view][] = fotos
 features[views_view][] = objecten
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][entity] = entity
