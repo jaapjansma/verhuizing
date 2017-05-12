@@ -605,10 +605,6 @@ function verhuizing_views_default_views() {
   $handler->display->display_options['fields']['field_verdieping']['table'] = 'field_data_field_verdieping';
   $handler->display->display_options['fields']['field_verdieping']['field'] = 'field_verdieping';
   $handler->display->display_options['fields']['field_verdieping']['type'] = 'taxonomy_term_reference_plain';
-  /* Veld: Inhoud: Opgemeten */
-  $handler->display->display_options['fields']['field_opgemeten']['id'] = 'field_opgemeten';
-  $handler->display->display_options['fields']['field_opgemeten']['table'] = 'field_data_field_opgemeten';
-  $handler->display->display_options['fields']['field_opgemeten']['field'] = 'field_opgemeten';
   /* Veld: Inhoud: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -636,10 +632,6 @@ function verhuizing_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'fotos/[nid]/gallerij';
   $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
-  /* Sorteercriterium: Inhoud: Opgemeten (field_opgemeten) */
-  $handler->display->display_options['sorts']['field_opgemeten_value']['id'] = 'field_opgemeten_value';
-  $handler->display->display_options['sorts']['field_opgemeten_value']['table'] = 'field_data_field_opgemeten';
-  $handler->display->display_options['sorts']['field_opgemeten_value']['field'] = 'field_opgemeten_value';
   /* Sorteercriterium: Inhoud: Verdieping (field_verdieping) */
   $handler->display->display_options['sorts']['field_verdieping_tid']['id'] = 'field_verdieping_tid';
   $handler->display->display_options['sorts']['field_verdieping_tid']['table'] = 'field_data_field_verdieping';
@@ -683,7 +675,6 @@ function verhuizing_views_default_views() {
 </ul>'),
     t('[title]'),
     t('Verdieping'),
-    t('Opgemeten'),
     t('Foto\'s'),
     t('Fotogallerij'),
     t('Page'),
